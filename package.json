@@ -1,10 +1,10 @@
 {
 	"name": "stringexjs",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"author": "Paul Schoenfelder <paulschoenfelder@gmail.com>",
-	"description": "straight port of rsl/stringex to node.js",
+	"description": "port of rsl/stringex to node.js",
 	"scripts": {
-		"test": "vows --spec --isolate"
+		"test": "vows test/* --spec --isolate"
 	},
 	"repository": {
 		"type": "git",
@@ -12,12 +12,10 @@
 	},
 	"main": "./lib/stringex.js",
 	"keywords": [
-		"stringex",
+		"stringex"
 	],
-	"dependencies" : {
-	},
 	"devDependencies": {
-		"vows"    :  ">= 0.6.1",
+		"vows":  ">= 0.6.1"
 	},
 	"license": "MIT"
 }
