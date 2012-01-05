@@ -1,6 +1,6 @@
 {
 	"name": "stringexjs",
-	"version": "0.1.0",
+	"version": "0.0.1",
 	"author": "Paul Schoenfelder <paulschoenfelder@gmail.com>",
 	"description": "straight port of rsl/stringex to node.js",
 	"scripts": {
