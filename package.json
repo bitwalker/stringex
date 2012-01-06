@@ -1,5 +1,5 @@
 {
-	"name": "stringexjs",
+	"name": "stringex",
 	"version": "0.1.0",
 	"author": "Paul Schoenfelder <paulschoenfelder@gmail.com>",
 	"description": "port of rsl/stringex to node.js",
@@ -8,7 +8,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/bitwalker/stringexjs.git"
+		"url": "git://github.com/bitwalker/stringex.git"
 	},
 	"main": "./lib/stringex.js",
 	"keywords": [
