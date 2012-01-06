@@ -7,7 +7,6 @@ At the moment this package is not feature complete, but it's usable.
 ### Planned Features
 
  - Full port of key features from rsl/stringex
- - Full module/define-amd/browser support
 
 ### Contributing
 
