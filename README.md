@@ -2,11 +2,17 @@
 
 > A semi-port of rsl/stringex from ruby to node.js
 
-At the moment this package is not feature complete, but it's usable.
+This is more or less intended to be a complete port of rsl/stringex (Ruby/Rails stringex lib).
+So far this package is more or less feature complete, but there are probably a lot of
+improvements that can be made. I'll try my best to seek out my failures, but please
+report issues to me via github so I can tackle them as quickly as possible. Thanks.
 
 ### Planned Features
 
- - Full port of key features from rsl/stringex
+ - Unicode <=> ASCII transliteration
+ - Character conversion
+ - Useful string manipulations
+ - Easy to use, yet feature-complete slug generator via stringex.toUrl()
 
 ### Contributing
 
