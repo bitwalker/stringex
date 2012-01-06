@@ -1,6 +1,6 @@
 {
 	"name": "stringexjs",
-	"version": "0.0.2",
+	"version": "0.0.5",
 	"author": "Paul Schoenfelder <paulschoenfelder@gmail.com>",
 	"description": "port of rsl/stringex to node.js",
 	"scripts": {
@@ -15,7 +15,7 @@
 		"stringex"
 	],
 	"dependencies": {
-		"yaml": ">= 0.2.3"	
+		"js-yaml": "git://github.com/nodeca/js-yaml.git"
 	},
 	"devDependencies": {
 		"vows":  ">= 0.6.1"
