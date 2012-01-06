@@ -2,7 +2,7 @@
 	"name": "stringex",
 	"version": "0.1.0",
 	"author": "Paul Schoenfelder <paulschoenfelder@gmail.com>",
-	"description": "port of rsl/stringex to node.js",
+	"description": "String extensions library for node.js",
 	"scripts": {
 		"test": "vows test/* --spec"
 	},
