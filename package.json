@@ -12,7 +12,10 @@
 	},
 	"main": "./lib/stringex.js",
 	"keywords": [
-		"stringex"
+		"stringex",
+		"transliteration",
+		"unicode",
+		"ascii"
 	],
 	"dependencies": {
 		"js-yaml": "git://github.com/nodeca/js-yaml.git"
