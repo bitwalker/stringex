@@ -1,7 +1,6 @@
 var vows    = require('vows'),
-    assert  = require('assert');
-
-var utils = require('../lib/utils');
+    assert  = require('assert'),
+    utils   = require('../lib/utils');
 
 var string = "$2 Soda   ";
 
