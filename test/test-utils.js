@@ -1,5 +1,5 @@
-var vows  	= require('vows'),
-    assert	= require('assert');
+var vows    = require('vows'),
+    assert  = require('assert');
 
 var utils = require('../lib/utils');
 
@@ -7,16 +7,16 @@ var string = "$2 Soda   ";
 
 vows.describe('Utility Functions').addBatch({
 
-	'when chaining an object': {
-		topic: function() { return utils.chain(string); },
+  'when chaining an object': {
+    topic: function() { return utils.chain(string); },
 
-		'the original is not modified': function(topic) {
-			assert.isTrue(topic.convertMiscCharacters().value() != string);
-		},
+    'the original is not modified': function(topic) {
+      assert.isTrue(topic.convertMiscCharacters().value() != string);
+    },
 
-		'the wrapped object is passed as the first parameter to chained functions': function(topic) {
-			assert.equal(topic.squeeze().value(), '$2 Soda ');
-		}
-	}
+    'the wrapped object is passed as the first parameter to chained functions': function(topic) {
+      assert.equal(topic.squeeze().value(), '$2 Soda ');
+    }
+  }
 
 }).export(module);

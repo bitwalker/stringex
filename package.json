@@ -1,27 +1,27 @@
 {
-	"name": "stringex",
-	"version": "0.1.0",
-	"author": "Paul Schoenfelder <paulschoenfelder@gmail.com>",
-	"description": "String extensions library for node.js",
-	"scripts": {
-		"test": "vows test/* --spec"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/bitwalker/stringex.git"
-	},
-	"main": "./lib/stringex.js",
-	"keywords": [
-		"stringex",
-		"transliteration",
-		"unicode",
-		"ascii"
-	],
-	"dependencies": {
-		"js-yaml": "git://github.com/nodeca/js-yaml.git"
-	},
-	"devDependencies": {
-		"vows":  ">= 0.6.1"
-	},
-	"license": "MIT"
+  "name": "stringex",
+  "version": "0.1.0",
+  "author": "Paul Schoenfelder <paulschoenfelder@gmail.com>",
+  "description": "String extensions library for node.js",
+  "scripts": {
+    "test": "vows test/* --spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitwalker/stringex.git"
+  },
+  "main": "./lib/stringex.js",
+  "keywords": [
+    "stringex",
+    "transliteration",
+    "unicode",
+    "ascii"
+  ],
+  "dependencies": {
+    "js-yaml": "git://github.com/nodeca/js-yaml.git"
+  },
+  "devDependencies": {
+    "vows":  ">= 0.6.1"
+  },
+  "license": "MIT"
 }
