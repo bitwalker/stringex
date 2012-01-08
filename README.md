@@ -7,7 +7,7 @@ So far this package is more or less feature complete, but there are probably a l
 improvements that can be made. I'll try my best to seek out my failures, but please
 report issues to me via github so I can tackle them as quickly as possible. Thanks.
 
-### Planned Features
+### Features
 
  - Unicode <=> ASCII transliteration
  - Character conversion
