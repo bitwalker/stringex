@@ -49,5 +49,23 @@ vows.describe('String Extensions').addBatch({
     'it returns the expected result': function(topic) {
       assert.equal(topic, 'Hello Paul!');
     }
+  },
+
+  'when calling randomChars without a limit': {
+    topic: function() { return StringEx.randomChars(); },
+
+    'it returns a 32 character string of random alphanumeric characters': function(topic) {
+      assert.ok(/^[\w\d]{32}$/g.test(topic));
+      assert.ok(topic.length === 32);
+    }
+  },
+
+  'when calling randomChars with a limit of 8': {
+    topic: function() { return StringEx.randomChars(8); },
+
+    'it returns an 8 character string of random alphanumeric characters': function(topic) {
+      assert.ok(/^[\w\d]{8}$/g.test(topic));
+      assert.ok(topic.length === 8);
+    }
   }
 }).export(module);
