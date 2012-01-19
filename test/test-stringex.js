@@ -41,5 +41,13 @@ vows.describe('String Extensions').addBatch({
     'we get "puters shot balls" as a result': function(topic) {
       assert.equal(topic, 'puters shot balls');
     }
+  },
+
+  'when calling interpolate with a string and arguments': {
+    topic: function() { return StringEx.interpolate('Hello #{0}!', 'Paul'); },
+
+    'it returns the expected result': function(topic) {
+      assert.equal(topic, 'Hello Paul!');
+    }
   }
 }).export(module);
