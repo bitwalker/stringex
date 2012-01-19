@@ -1,6 +1,6 @@
 {
   "name": "stringex",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "Paul Schoenfelder <paulschoenfelder@gmail.com>",
   "description": "String extensions library for node.js",
   "scripts": {
