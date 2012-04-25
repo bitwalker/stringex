@@ -23,6 +23,12 @@ var turkishDecoded = "Istanbul";
 var georgianEncoded = "საქართველო";
 var georgianDecoded = "sak`art`velo";
 
+var hiraganaEncoded = "ひらがな";
+var hiraganaDecoded = "hiragana";
+
+var hangulEncoded = "해동검도";
+var hangulDecoded = "haedong kumdo";
+
 vows.describe('Unidecoder').addBatch({
 
   'when decoding "Today it was -140° outside!" from unicode to ASCII': {
@@ -73,6 +79,19 @@ vows.describe('Unidecoder').addBatch({
     'the result should be "sak`art`velo"': function(topic) {
       assert.equal(topic, georgianDecoded);
     }
-  }
+  },
+
+  'when decoding "ひらがな" from unicode to ASCII': {
+    topic: function() { return Unidecoder.decode(hiraganaEncoded); },
+    'the result should be "hiragana"': function(topic) {
+      assert.equal(topic, hiraganaDecoded);
+    }
+  }/*,
+  'when decoding "해동검도" from unicode to ASCII': {
+    topic: function() { return Unidecoder.decode(hangulEncoded); },
+    'the result should be "haedong kumdo"': function(topic) {
+      assert.equal(topic, hangulDecoded);
+    }
+  }*/
 
 }).export(module);
