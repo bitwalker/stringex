@@ -4,7 +4,8 @@
   "author": "Paul Schoenfelder <paulschoenfelder@gmail.com>",
   "description": "String extensions library for node.js",
   "scripts": {
-    "test": "vows test/* --spec"
+    "pretest": "./node_modules/.bin/jshint lib",
+    "test": "./node_modules/.bin/vows test/* --spec"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,8 @@
     "js-yaml": ">= 0.3.5 < 1.0.0"
   },
   "devDependencies": {
-    "vows":  ">= 0.6.1"
+    "vows":  ">= 0.6.1",
+    "jshint": "*"
   },
   "license": "MIT"
 }
