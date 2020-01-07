@@ -5,7 +5,7 @@
   "description": "String extensions library for node.js",
   "scripts": {
     "pretest": "./node_modules/.bin/jshint lib",
-    "test": "./node_modules/.bin/vows test/* --spec"
+    "test": "./node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,8 @@
     "js-yaml": "~3.13"
   },
   "devDependencies": {
-    "vows":  ">= 0.6.1",
+    "chai": "*",
+    "mocha": "*",
     "jshint": "*"
   },
   "license": "MIT"

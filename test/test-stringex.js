@@ -1,71 +1,70 @@
-var vows     = require('vows'),
-    assert   = require('assert'),
+var assert   = require('chai').assert,
     StringEx = require('../lib/stringex');
 
-vows.describe('String Extensions').addBatch({
-  'when converting the string "$2 Soda" to a url-friendly format': {
-    topic: function() { return StringEx.toUrl('$2 Soda'); },
+describe('String Extensions', () => {
+  context('when converting the string "$2 Soda" to a url-friendly format', () => {
+    let topic = StringEx.toUrl('$2 Soda');
 
-    'we get 2-dollars-soda as a result': function(topic) {
+    it('we get 2-dollars-soda as a result', () => {
       assert.equal(topic, '2-dollars-soda');
-    }
-  },
+    })
+  })
 
-  'when stripping html tags from "<p>Hello!</p>"': {
-    topic: function() { return StringEx.stripHtmlTags("<p>Hello!</p>"); },
+  context('when stripping html tags from "<p>Hello!</p>"', () => {
+    let topic = StringEx.stripHtmlTags("<p>Hello!</p>");
 
-    'we get "Hello!" as a result': function(topic) {
+    it('we get "Hello!" as a result', () => {
       assert.equal(topic, 'Hello!');
-    }
-  },
+    })
+  })
 
-  'when squeezing the string "yellow moon"': {
-    topic: function() { return StringEx.squeeze('yellow moon'); },
+  context('when squeezing the string "yellow moon"', () => {
+    let topic = StringEx.squeeze('yellow moon');
 
-    'we get "yelow mon" as a result': function(topic) {
+    it('we get "yelow mon" as a result', () => {
       assert.equal(topic, 'yelow mon');
-    }
-  },
+    })
+  })
 
-  'when squeezing the string "  now    is  the", with " " as a parameter': {
-    topic: function() { return StringEx.squeeze('  now    is  the', ' '); },
+  context('when squeezing the string "  now    is  the", with " " as a parameter', () => {
+    let topic = StringEx.squeeze('  now    is  the', ' ');
 
-    'we get " now is the" as a result': function(topic) {
+    it('we get " now is the" as a result', () => {
       assert.equal(topic, ' now is the');
-    }
-  },
+    })
+  })
 
-  'when squeezing the string "putters shoot balls" with "m-z" as a parameter': {
-    topic: function() { return StringEx.squeeze('putters shoot balls', 'm-z'); },
+  context('when squeezing the string "putters shoot balls" with "m-z" as a parameter', () => {
+    let topic = StringEx.squeeze('putters shoot balls', 'm-z');
 
-    'we get "puters shot balls" as a result': function(topic) {
+    it('we get "puters shot balls" as a result', () => {
       assert.equal(topic, 'puters shot balls');
-    }
-  },
+    })
+  })
 
-  'when calling interpolate with a string and arguments': {
-    topic: function() { return StringEx.interpolate('Hello #{0}!', 'Paul'); },
+  context('when calling interpolate with a string and arguments', () => {
+    let topic = StringEx.interpolate('Hello #{0}!', 'Paul');
 
-    'it returns the expected result': function(topic) {
+    it('it returns the expected result', () => {
       assert.equal(topic, 'Hello Paul!');
-    }
-  },
+    })
+  })
 
-  'when calling randomChars without a limit': {
-    topic: function() { return StringEx.randomChars(); },
+  context('when calling randomChars without a limit', () => {
+    let topic = StringEx.randomChars();
 
-    'it returns a 32 character string of random alphanumeric characters': function(topic) {
+    it('it returns a 32 character string of random alphanumeric characters', () => {
       assert.ok(/^[\w\d]{32}$/g.test(topic));
       assert.ok(topic.length === 32);
-    }
-  },
+    })
+  })
 
-  'when calling randomChars with a limit of 8': {
-    topic: function() { return StringEx.randomChars(8); },
+  context('when calling randomChars with a limit of 8', () => {
+    let topic = StringEx.randomChars(8);
 
-    'it returns an 8 character string of random alphanumeric characters': function(topic) {
+    it('it returns an 8 character string of random alphanumeric characters', () => {
       assert.ok(/^[\w\d]{8}$/g.test(topic));
       assert.ok(topic.length === 8);
-    }
-  }
-}).export(module);
+    })
+  })
+})

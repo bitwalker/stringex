@@ -1,21 +1,24 @@
-var vows    = require('vows'),
-    assert  = require('assert'),
-    utils   = require('../lib/utils');
+var assert = require('chai').assert,
+    stringex = require('../lib/stringex');
+    utils  = require('../lib/utils');
 
-var string = "$2 Soda   ";
+const string = "$2 Soda   ";
 
-vows.describe('Utility Functions').addBatch({
+describe('Utility Functions', () => {
 
-  'when chaining an object': {
-    topic: function() { return utils.chain(string); },
+  context('when chaining an object', () => {
 
-    'the original is not modified': function(topic) {
-      assert.isTrue(topic.convertMiscCharacters().value() != string);
-    },
+    it('the original is not modified', () => {
+      const string = "$2 Soda   ";
+      let s = utils.chain(string);
+      assert.isTrue(s.convertMiscCharacters().value() != string);
+    })
 
-    'the wrapped object is passed as the first parameter to chained functions': function(topic) {
-      assert.equal(topic.squeeze().value(), '$2 Soda ');
-    }
-  }
+    it('the wrapped object is passed as the first parameter to chained functions', () => {
+      const string = "$2 Soda   ";
+      let s = utils.chain(string);
+      assert.equal(s.squeeze().value(), '$2 Soda ');
+    })
+  })
 
-}).export(module);
+})

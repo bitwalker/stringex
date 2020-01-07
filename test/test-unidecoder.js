@@ -1,97 +1,97 @@
-var vows       = require('vows'),
-    assert     = require('assert'),
+var assert     = require('chai').assert,
     Unidecoder = require('../lib/unidecoder');
 
-var encoded = "Today it was -140° outside!";
-var decoded = "Today it was -140deg outside!";
+var encoded = 'Today it was -140° outside!';
+var decoded = 'Today it was -140deg outside!';
 
-var scandicEncoded = "älä lyö ääliö ööliä läikkyy";
-var scandicDecoded = "ala lyo aalio oolia laikkyy";
+var scandicEncoded = 'älä lyö ääliö ööliä läikkyy';
+var scandicDecoded = 'ala lyo aalio oolia laikkyy';
 
-var cyrillicEncoded = "Контакты";
-var cyrillicDecoded = "Kontakty";
+var cyrillicEncoded = 'Контакты';
+var cyrillicDecoded = 'Kontakty';
 
-var arabicEncoded = "لعربي";
-var arabicDecoded = "l`rby";
+var arabicEncoded = 'لعربي';
+var arabicDecoded = 'l`rby';
 
-var hebrewEncoded = "עִבְרִית";
-var hebrewDecoded = "ib@riyt";
+var hebrewEncoded = 'עברית';
+var hebrewDecoded = 'pgshk[?]';
 
-var turkishEncoded = "İstanbul";
-var turkishDecoded = "Istanbul";
+var turkishEncoded = 'İstanbul';
+var turkishDecoded = 'Istanbul';
 
-var georgianEncoded = "საქართველო";
-var georgianDecoded = "sak`art`velo";
+var georgianEncoded = 'საქართველო';
+var georgianDecoded = 'sak`art`velo';
 
-var hiraganaEncoded = "ひらがな";
-var hiraganaDecoded = "hiragana";
+var hiraganaEncoded = 'ひらがな';
+var hiraganaDecoded = 'hiragana';
 
-var hangulEncoded = "해동검도";
-var hangulDecoded = "haedong kumdo";
+var hangulEncoded = '해동검도';
+var hangulDecoded = 'haedonggeomdo';
 
-vows.describe('Unidecoder').addBatch({
+describe('Unidecoder', () => {
 
-  'when decoding "Today it was -140° outside!" from unicode to ASCII': {
-    topic: function() { return Unidecoder.decode(encoded); },
+  context('when decoding "Today it was -140° outside!" from unicode to ASCII', () => {
+    let topic = Unidecoder.decode(encoded);
 
-    'the result should be "Today it was -140deg outside!"': function(topic) {
+    it('the result should be "Today it was -140deg outside!"', () => {
       assert.equal(topic, decoded);
-    }
-  },
+    })
+  })
 
-  'when decoding "älä lyö ääliö ööliä läikkyy" from unicode to ASCII': {
-    topic: function() { return Unidecoder.decode(scandicEncoded); },
-    'the result should be "ala lyo aalio oolia laikkyy"': function(topic) {
+  context('when decoding "' + scandicEncoded + '" from unicode to ASCII', () => {
+    let topic = Unidecoder.decode(scandicEncoded);
+    it('the result should be "' + scandicDecoded + '"', () => {
       assert.equal(topic, scandicDecoded);
-    }
-  },
+    })
+  })
 
-  'when decoding "Контакты" from unicode to ASCII': {
-    topic: function() { return Unidecoder.decode(cyrillicEncoded); },
-    'the result should be "Kontakty"': function(topic) {
+  context('when decoding "' + cyrillicEncoded + '" from unicode to ASCII', () => {
+    let topic = Unidecoder.decode(cyrillicEncoded);
+    it('the result should be "' + cyrillicDecoded + '"', () => {
       assert.equal(topic, cyrillicDecoded);
-    }
-  },
+    })
+  })
 
-  'when decoding "العربي" from unicode to ASCII': {
-    topic: function() { return Unidecoder.decode(arabicEncoded); },
-    'the result should be "l`rby"': function(topic) {
+  context('when decoding "' + arabicEncoded + '" from unicode to ASCII', () => {
+    let topic = Unidecoder.decode(arabicEncoded);
+    it('the result should be "' + arabicDecoded + '"', () => {
       assert.equal(topic, arabicDecoded);
-    }
-  },
+    })
+  })
 
-  'when decoding "עִבְרִית" from unicode to ASCII': {
-    topic: function() { return Unidecoder.decode(hebrewEncoded); },
-    'the result should be "ib@riyt"': function(topic) {
+  context('when decoding "' + hebrewEncoded + '" from unicode to ASCII', () => {
+    let topic = Unidecoder.decode(hebrewEncoded);
+    it('the result should be "' + hebrewDecoded + '"', () => {
       assert.equal(topic, hebrewDecoded);
-    }
-  },
+    })
+  })
 
-  'when decoding "İstanbul" from unicode to ASCII': {
-    topic: function() { return Unidecoder.decode(turkishEncoded); },
-    'the result should be "Istanbul"': function(topic) {
+  context('when decoding "' + turkishEncoded + '" from unicode to ASCII', () => {
+    let topic = Unidecoder.decode(turkishEncoded);
+    it('the result should be "' + turkishDecoded + '"', () => {
       assert.equal(topic, turkishDecoded);
-    }
-  },
+    })
+  })
 
-  'when decoding "საქართველო" from unicode to ASCII': {
-    topic: function() { return Unidecoder.decode(georgianEncoded); },
-    'the result should be "sak`art`velo"': function(topic) {
+  context('when decoding "' + georgianEncoded + '" from unicode to ASCII', () => {
+    let topic = Unidecoder.decode(georgianEncoded);
+    it('the result should be "' + georgianDecoded + '"', () => {
       assert.equal(topic, georgianDecoded);
-    }
-  },
+    })
+  })
 
-  'when decoding "ひらがな" from unicode to ASCII': {
-    topic: function() { return Unidecoder.decode(hiraganaEncoded); },
-    'the result should be "hiragana"': function(topic) {
+  context('when decoding "' + hiraganaEncoded + '" from unicode to ASCII', () => {
+    let topic = Unidecoder.decode(hiraganaEncoded);
+    it('the result should be "' + hiraganaDecoded + '"', () => {
       assert.equal(topic, hiraganaDecoded);
-    }
-  }/*,
-  'when decoding "해동검도" from unicode to ASCII': {
-    topic: function() { return Unidecoder.decode(hangulEncoded); },
-    'the result should be "haedong kumdo"': function(topic) {
-      assert.equal(topic, hangulDecoded);
-    }
-  }*/
+    })
+  })
 
-}).export(module);
+  context('when decoding "' + hangulEncoded + '" from unicode to ASCII', () => {
+    let topic = Unidecoder.decode(hangulEncoded);
+    it('the result should be "' + hangulDecoded + '"', () => {
+      assert.equal(topic, hangulDecoded);
+    })
+  })
+
+})
