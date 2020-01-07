@@ -15,7 +15,7 @@ var arabicEncoded = "لعربي";
 var arabicDecoded = "l`rby";
 
 var hebrewEncoded = "עִבְרִית";
-var hebrewDecoded = "`pegeshek";
+var hebrewDecoded = "ib@riyt";
 
 var turkishEncoded = "İstanbul";
 var turkishDecoded = "Istanbul";
@@ -62,7 +62,7 @@ vows.describe('Unidecoder').addBatch({
 
   'when decoding "עִבְרִית" from unicode to ASCII': {
     topic: function() { return Unidecoder.decode(hebrewEncoded); },
-    'the result should be "`pegeshek"': function(topic) {
+    'the result should be "ib@riyt"': function(topic) {
       assert.equal(topic, hebrewDecoded);
     }
   },
